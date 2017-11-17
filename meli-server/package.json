@@ -1,0 +1,14 @@
+{
+  "name": "apiserver",
+  "version": "1.0.0",
+  "description": "api called from view",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Bruno Seguer",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
