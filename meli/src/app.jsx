@@ -1,5 +1,7 @@
 import React from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Layout from './containers/layout.jsx';
+import ItemDetail from './components/Detail/index.jsx';
 // import logo from './logo.svg';
 // import './App.css';
 
@@ -16,9 +18,13 @@ import Layout from './containers/layout.jsx';
 // );
 
 const App = () => (
-  <div>
-    <Layout />
-  </div>
+  <BrowserRouter>
+    <div>
+      <Route exact path="/" component={Layout} />
+      <Route path="/items/" component={Layout} />
+      <Route path="/items/:id" component={ItemDetail} />
+    </div>
+  </BrowserRouter>
 );
 
 export default App;

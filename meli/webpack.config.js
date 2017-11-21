@@ -4,19 +4,23 @@ const BUILD_DIR = path.resolve(__dirname, 'public');
 const APP_DIR = path.resolve(__dirname, 'src');
 
 const config = {
-  entry: APP_DIR + '/index.jsx',
+  context: APP_DIR,
+  entry: './index.jsx',
   output: {
     path: BUILD_DIR,
-    filename: 'bundle.js'
+    filename: './bundle.js',
   },
-  module : {
-    loaders : [
+  module: {
+    loaders: [
       {
-        test : /\.js*?/,
-        include : APP_DIR,
-        loader : 'babel-loader'
+        test: /\.js*?/,
+        include: APP_DIR,
+        loader: 'babel-loader',
       }
     ]
+  },
+  devServer: {
+    historyApiFallback: true,
   }
 };
 

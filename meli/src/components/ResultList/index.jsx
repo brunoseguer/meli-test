@@ -1,5 +1,6 @@
 import React from 'react';
 import Item from '../Item/index.jsx';
+import { Link } from 'react-router-dom';
 
 class ResultList extends React.Component {
   constructor(props) {
@@ -7,19 +8,24 @@ class ResultList extends React.Component {
     this.state = { show: false };
   }
 
-  componentWillMount() {
-    console.info('antes de ejecutar');
+  componentDidMount() {
+    console.info('ResultList did mount');
   }
 
   render() {
     const items = this.props.items;
     return (
       <div>
-        {items.map(item => (
-          <div key={item.id}>
-            <Item item={item.title} />
-          </div>
-        ))}
+        {items.map((item) => {
+          console.log('Item: ', item);
+          return (
+            <div key={item.id}>
+              <Link to={`/items/${item.id}`}>
+                <Item item={item} />
+              </Link>
+            </div>
+          )
+        })}
       </div>
     );
   }

@@ -20,7 +20,7 @@ class Request {
         const item = new schema.Entity('items');
         const mySchema = { items: [ item ] }
         const entities = { items: response.data.json.results };
-        const denormalizedData = denormalize({ items: [ 0, 1, 2, 3, 4 ] }, mySchema, entities);
+        const denormalizedData = denormalize({ items: [ 0, 1, 2, 3 ] }, mySchema, entities);
         console.log('denormalizedData: ', denormalizedData);
         return denormalizedData;
     })

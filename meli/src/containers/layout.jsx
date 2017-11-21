@@ -12,6 +12,11 @@ class Layout extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    console.info('Layout did mount');
+    console.info('Match received: ', this.match);
+  }
+
   handleSubmit(input) {
     request.get(input)
       .then((data) => {

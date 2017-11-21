@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SearchForm extends React.Component {
   constructor(props) {
@@ -23,12 +24,23 @@ class SearchForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <div>
         <input type="text" value={this.state.userInput} onChange={this.handleChange} />
-        <input type="submit" value="Submit" />
-      </form>
+        <Link to={{
+            pathname: '/items',
+            search: `?search=${this.state.userInput}`,
+          }} >Submit</Link>
+      </div>
     );
   }
+  // render() {
+  //   return (
+  //     <form onSubmit={this.handleSubmit}>
+  //       <input type="text" value={this.state.userInput} onChange={this.handleChange} />
+  //       <input type="submit" value="Submit" />
+  //     </form>
+  //   );
+  // }
 }
 
 export default SearchForm;
