@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ItemDetail = ({ match }) => {
+const Detail = ({ match }) => {
   console.log('Match received: ', match);
-  return <h1>Hello {match.params.id}!</h1>;
+  return <h1>{match.params.id}</h1>;
 };
 
-export default ItemDetail;
+export default Detail;

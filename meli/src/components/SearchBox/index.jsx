@@ -1,23 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { stringify } from 'querystring';
 
 class SearchBox extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      userInput: '',
-    };
-    this.handleUserInput = this.handleUserInput.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
-  handleUserInput(e) {
-    this.setState({
-      userInput: e.target.value,
-    });
+
+  handleChange(e) {
+    this.props.onInput(e.target.value);
   }
+
   render() {
+    const { userInput } = this.props;
     return (
       <div>
-        <input value={this.state.userInput} type="text" onChange={this.handleUserInput} />
-        <h1>{this.state.userInput}</h1>
+        <input type="text" value={userInput} onChange={this.handleChange} />
+        <Link to={{
+            pathname: '/items',
+            search: stringify({ search: userInput }),
+          }} >Submit</Link>
       </div>
     );
   }
