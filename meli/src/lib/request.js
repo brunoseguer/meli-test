@@ -5,10 +5,6 @@ import { denormalize, schema } from 'normalizr';
 const path = 'http://localhost:3000/api/items';
 
 class Request {
-  // constructor(store) {
-  //   this.store = store;
-  // }
-
   get(query) {
     return axios.get(path, {
       params: {
@@ -17,12 +13,12 @@ class Request {
     })
       .then(response => {
         console.log('Response: ',response);
-        const item = new schema.Entity('items');
-        const mySchema = { items: [ item ] }
-        const entities = { items: response.data.json.results };
-        const denormalizedData = denormalize({ items: [ 0, 1, 2, 3 ] }, mySchema, entities);
-        console.log('denormalizedData: ', denormalizedData);
-        return denormalizedData;
+        // const item = new schema.Entity('items');
+        // const mySchema = { items: [ item ] }
+        // const entities = { items: response.data.json.results };
+        // const denormalizedData = denormalize({ items: [ 0, 1, 2, 3 ] }, mySchema, entities);
+        // console.log('denormalizedData: ', denormalizedData);
+        return response;
     })
     .catch(error => {
         console.log(error);

@@ -1,8 +1,11 @@
-var https = require('https');
+const https = require('https');
+const util = require('./util');
+const Util = new util();
 
-module.exports = function(q, cb){
+module.exports = function(conf, q, cb){
+	const rows = 4;
 	let body = "";
-  https.get("https://api.mercadolibre.com/sites/MLA/search?q="+q, (res) => {
+  https.get(`${conf.urlApiSearch}${q}`, (res) => {
 		console.info("api.mercadolibre.request...");
 		console.log('statusCode:', res.statusCode);
 
@@ -11,8 +14,11 @@ module.exports = function(q, cb){
     });
 
     res.on('end', () => {
-      var json = JSON.parse(body);
-      cb.send({'json': json});
+      const json = JSON.parse(body);
+			Util.formatQueryResult(conf.author, json, rows, (results) => {
+				console.info(results);
+				cb.send(results);
+			});
     });
 
   }).on('error', (e) => {

@@ -8,17 +8,18 @@ const request = new Request();
 class SearchResultsContainer extends React.Component {
   constructor(props) {
     super(props);
-    const params = new URLSearchParams(this.props.location.search).get('search');
+    // const params = new URLSearchParams(this.props.location.search).get('search');
     this.state = {
-      items: [],
-      userInput: params || '',
+      items: [{ id:'idlala', title: 'soy un title' }],
       showResult: false,
+      // userInput: params || '',
     };
-    this.handleInput = this.handleInput.bind(this);
+    // this.handleInput = this.handleInput.bind(this);
   }
 
   componentDidMount() {
     console.info('SearchResultsContainer did mount');
+    // this.setState({ showResult: true });
     request.get(this.state.userInput)
       .then((data) => {
         console.log('DATA handleSubmit: ', data);
@@ -29,14 +30,13 @@ class SearchResultsContainer extends React.Component {
       });
   }
 
-  handleInput(userInput) {
-    this.setState({ userInput });
-  }
+  // handleInput(userInput) {
+  //   this.setState({ userInput });
+  // }
 
   render() {
     return (
       <div>
-        <SearchBox onInput={this.handleInput} userInput={this.state.userInput} />
         <ResultList items={this.state.items} showResult={this.state.showResult} />
       </div>
     );
