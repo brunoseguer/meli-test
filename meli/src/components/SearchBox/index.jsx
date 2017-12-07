@@ -16,7 +16,7 @@ class SearchBox extends React.Component {
     const { userInput } = this.props;
     return (
       <div>
-        <input type="text" value={userInput} onChange={this.handleChange} />
+        <input type="text" value={userInput} placeholder="Nunca dejes de buscar" onChange={this.handleChange} />
         <Link to={{
             pathname: '/items',
             search: stringify({ search: userInput }),

@@ -1,9 +1,12 @@
 module.exports = function() {
     this.formatQueryResult = function(author, json, count, cb) {
+      console.log(json);
       const output = {};
       const results = json.results;
       const items = [];
       const loop = (results.length > 0 && results.length > count) ? count : results.length;
+      const categories = json.available_filters.filter(i => i.id === 'category')[0];
+
 
       for(let x = 0; x < loop; x++) {
         const priceArr = results[x].price.toString().split('.');
@@ -21,7 +24,7 @@ module.exports = function() {
         items.push(item);
       }
       output.author = { name: author.name, lastname: author.lastname };
-      output.categories = json.available_filters.filter(i => i.id === 'category')[0].values.map( c => c.name);
+      output.categories = categories ? categories.values.map( c => c.name) : [];
       output.items = items;
       cb(output);
   }

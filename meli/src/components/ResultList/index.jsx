@@ -12,7 +12,7 @@ class ResultList extends React.Component {
   }
 
   render() {
-    const items = this.props.items;
+    const items = this.props.items || [];
     return this.props.showResult && (
       <div>
         {items.map((item, i) => {

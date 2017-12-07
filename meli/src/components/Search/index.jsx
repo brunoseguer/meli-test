@@ -11,8 +11,8 @@ class SearchForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    this.props.onSubmit(this.state.userInput);
+    // e.preventDefault();
+    // this.props.onSubmit(this.state.userInput);
   }
 
   handleChange(e) {
@@ -21,8 +21,9 @@ class SearchForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} method="get" action="/items" >
-        <input type="text" value={this.props.userInput} name="search" onChange={this.handleChange} />
+      <form method="get" action="/items" >
+        <h1>hola</h1>
+        <input type="text" value={this.props.userInput} name="search" placeholder="Nunca dejes de buscar" onChange={this.handleChange} />
         <input type="submit" value="Submit" />
       </form>
     );

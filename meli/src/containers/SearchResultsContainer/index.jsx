@@ -8,11 +8,11 @@ const request = new Request();
 class SearchResultsContainer extends React.Component {
   constructor(props) {
     super(props);
-    // const params = new URLSearchParams(this.props.location.search).get('search');
+    const params = new URLSearchParams(this.props.location.search).get('search');
     this.state = {
-      items: [{ id:'idlala', title: 'soy un title' }],
+      items: [],
       showResult: false,
-      // userInput: params || '',
+      userInput: params || '',
     };
     // this.handleInput = this.handleInput.bind(this);
   }

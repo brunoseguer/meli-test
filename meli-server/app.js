@@ -23,6 +23,7 @@ app.use((req, res, next)=>{
 
 app.get('/api/items', (req, res)=>{
   const q = req.query.q || "";
+  console.log('api/items: ', q);
   search(conf, q, res);
 });
 
