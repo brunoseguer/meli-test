@@ -19,9 +19,9 @@ class SearchBoxContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <header className="search">
         <SearchForm onInput={this.handleInput} userInput={this.state.userInput} />
-      </div>
+      </header>
     )
   }
 }

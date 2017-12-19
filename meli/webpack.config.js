@@ -23,13 +23,13 @@ const config = {
         loader: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
           use: [
             {
-                loader: "css-loader" // translates CSS into CommonJS
+              loader: 'css-loader' // translates CSS into CommonJS
             },
             {
-                loader: "sass-loader" // compiles Sass to CSS
+              loader: 'sass-loader' // compiles Sass to CSS
             }
           ],
-          fallback: "style-loader" // used when css not extracted
+          fallback: 'style-loader' // used when css not extracted
       }))
       }
     ],

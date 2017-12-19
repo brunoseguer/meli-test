@@ -22,8 +22,13 @@ class SearchForm extends React.Component {
   render() {
     return (
       <form method="get" action="/items" >
-        <h1>hola</h1>
-        <input type="text" value={this.props.userInput} name="search" placeholder="Nunca dejes de buscar" onChange={this.handleChange} />
+        <input
+          type="text"
+          value={this.props.userInput}
+          name="search"
+          placeholder="Nunca dejes de buscar"
+          onChange={this.handleChange}
+        />
         <input type="submit" value="Submit" />
       </form>
     );

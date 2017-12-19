@@ -6,7 +6,7 @@ import DetailContainer from './containers/DetailContainer/index.jsx';
 
 const App = () => (
   <BrowserRouter>
-    <div>
+    <div className="main-app">
       <Route path="/" component={SearchBoxContainer} />
       <Route exact path="/items" component={SearchResultsContainer} />
       <Route exact path="/items/:id" component={DetailContainer} />
