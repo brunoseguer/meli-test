@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from '../../components/Logo/logo.jsx';
 
 class SearchForm extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class SearchForm extends React.Component {
   render() {
     return (
       <form method="get" action="/items" >
+        <Logo />
         <input
           type="text"
           value={this.props.userInput}
@@ -29,7 +31,7 @@ class SearchForm extends React.Component {
           placeholder="Nunca dejes de buscar"
           onChange={this.handleChange}
         />
-        <input type="submit" value="Submit" />
+        <input type="submit" className="nav-search-btn" value=" " />
       </form>
     );
   }

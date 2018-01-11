@@ -1,6 +1,7 @@
 import React from 'react';
 // import SearchBox from '../../components/SearchBox/index.jsx';
 import SearchForm from '../../components/Search/index.jsx';
+// import Logo from '../../components/Logo/logo.jsx';
 import Request from '../../lib/request';
 
 const request = new Request();
@@ -22,7 +23,7 @@ class SearchBoxContainer extends React.Component {
       <header className="search">
         <SearchForm onInput={this.handleInput} userInput={this.state.userInput} />
       </header>
-    )
+    );
   }
 }
 

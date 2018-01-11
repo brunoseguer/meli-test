@@ -36,9 +36,7 @@ class SearchResultsContainer extends React.Component {
 
   render() {
     return (
-      <div>
-        <ResultList items={this.state.items} showResult={this.state.showResult} />
-      </div>
+      <ResultList items={this.state.items} showResult={this.state.showResult} />
     );
   }
 }

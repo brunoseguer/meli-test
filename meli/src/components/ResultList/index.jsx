@@ -14,11 +14,11 @@ class ResultList extends React.Component {
   render() {
     const items = this.props.items || [];
     return this.props.showResult && (
-      <div>
+      <div className="parent">
         {items.map((item, i) => {
           console.log('Item: ', item);
           return (
-            <div key={`item.id${i}`}>
+            <div key={`item.id${i}`} className="child">
               <Link to={`/items/${item.id}`}>
                 <Item item={item} />
               </Link>
