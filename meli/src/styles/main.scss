@@ -34,6 +34,9 @@ form {
   width: 75%;
 }
 
+li {
+  list-style-type: none;
+}
 
 .nav-logo {
   width: 58px;
@@ -78,12 +81,24 @@ form {
   display: flex;
   flex-direction: column;
   height: 480px; /* Or whatever */
-  border: 5px solid;
+  border: 0px;
 }
 
 .child {
-  width: 700px;  /* Or whatever */
+  background-color: white;
+  width: 1000px;  /* Or whatever */
   height: 120px; /* Or whatever */
   margin: auto;  /* Magic! */
-  border: 1px solid;
+  border: 1px ;
+}
+
+li {
+  &:after {
+    content: "";
+    position: absolute;
+    left: 24px;
+    height: 1px;
+    width: 80.5%;
+    border-bottom: 1px solid #eee;
+  }
 }
